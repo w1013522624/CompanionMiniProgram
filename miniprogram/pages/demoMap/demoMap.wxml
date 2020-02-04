@@ -1,0 +1,36 @@
+<view class='changeInfo'>
+  <view class='changeInfoName'>
+      <input placeholder='微信昵称' bindinput='getNameValue' 
+        value='{{nickName}}'  disabled="disabled" />
+  </view>
+
+  <view class='changeInfoName'>
+      <input placeholder='请输入姓名' bindinput='getNameValue' 
+        value='{{name}}'/> 
+  </view>
+
+  <view class='changeInfoName'>
+      <input placeholder='请输入年级' bindinput='getPhoneValue' 
+        value='{{phone}}'/> 
+  </view>
+  
+  <view class='changeInfoName'>
+      <input placeholder='请输入学号' bindinput='getPhoneValue' 
+        value='{{phone}}'/> 
+  </view>
+
+  <view class='changeInfoName'>
+     <input placeholder='请输入学号的密码' type="password"  
+        bindinput='getPhoneValue' value='{{phone}}'/> 
+  </view>
+
+
+  <button class='changeBtn' bindtap='regester'>注册</button>
+</view>
+
+
+<!-- 底部弹出框 -->
+<x-login modalShow="{{modalShow}}" 
+  bind:loginSuccess="onLoginSuccess" 
+  bind:loginFail="onLoginFail">
+</x-login>

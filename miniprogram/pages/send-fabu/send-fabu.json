@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "x-bottom-model": "/components/bottom-model/bottom-model"
+  },
+  "navigationBarTitleText": "发布结伴信息"
+  
+}

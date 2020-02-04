@@ -1,0 +1,91 @@
+<view class="container">
+  <!-- 标题 -->
+  <view class="head">
+    <input class="head-input" bindinput="onHead" placeholder="你想结伴做什么..." maxlength="20"></input>
+  </view>
+  <!-- auto-focus 获取焦点 -->
+  <textarea class="content1" placeholder="比如周末玩什么、结伴旅行、约拍约饭等, 有真实自拍或活动场地实拍会更受欢迎哦~" bindinput="onInput" maxlength="300" auto-focus bindfocus="onFocus" bindblur="onBlur">
+  </textarea>
+
+  <view class="image-list">
+    <!-- 显示图片 -->
+    <block wx:for="{{images}}" wx:key="*this">
+      <view class="image-wrap">
+        <image class="image" src="{{item}}" mode="aspectFill" bindtap="onPreviewImage" data-imgsrc="{{item}}"></image>
+        <!-- 删除图标 -->
+        <i class="iconfont icon-shanchu del" bindtap="onDelImg" data-index="{{index}}"></i>
+      </view>
+    </block>
+
+
+    <!-- 选择图片 -->
+    <view class="image-wrap selectphoto" 
+      hidden="{{!selectPhoto}}" 
+      bindtap="onChooseImage">
+      <i class="iconfont icon-jiahao plus"></i>
+    </view>
+  </view>
+  <!-- 选择人数、地点等 -->
+  <view class="nav">
+    <view class="nav-item">
+      <picker mode="selector" value="{{user}}" range="{{itemList}}"
+        bindchange="bindSeclectUser" class="nclick">
+        <view class="picker">
+          结伴人数: {{user}}
+        </view>
+      </picker>
+    </view>
+    <view class="nav-item">
+      <!-- <view class="section__title">时间选择器</view> -->
+      <picker mode="time" value="{{time}}" start="09:01" end="20:00" 
+        bindchange="bindTimeChange" class="nclick">
+        <view class="picker">
+          出发时间: {{time}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="nav-item">
+      <!-- 日期选择器 -->
+      <picker mode="date" value="{{date}}" 
+        start="2019-12-23" end="2025-09-01" 
+        bindchange="bindDateChange" class="nclick">
+        <view class="picker">
+          出发日期: {{date}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="nav-item" >
+      <!-- 省市区选择器 -->
+      <picker mode="region" 
+        bindchange="bindRegionChange" value="{{region}}" 
+        custom-item="{{customItem}}" class="nclick">
+        <view class="picker">
+          前往省市：{{region[0]}}，{{region[1]}}，{{region[2]}}
+        </view>
+      </picker>
+    </view>
+
+  </view>
+</view>
+<!-- ------------------------------------- -->
+<!-- 底部弹出框 -->
+<view>
+  <x-bottom-model model-show="true">
+    <view slot="modal-content">
+      <button class="login" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">获取授权信息</button>
+    </view>
+  </x-bottom-model>
+  <!-- 底部弹出框 -->
+  <!-- 
+  <x-login modalShow="{{modalShow}}" 
+    bind:loginSuccess="onLoginSuccess"        
+    bind:loginFail="onLoginFail"> 
+  -->
+</view>
+
+<view class="footer" style="bottom:{{footerBottom}}px">
+  <text class="words-num">{{wordsNum}}</text>
+  <button class="send-btn" bindtap="send">发布</button>
+</view>

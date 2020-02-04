@@ -1,0 +1,4 @@
+/* pages/analysis/analysis.wxss */
+.btn-click {
+  background-color: lightblue;
+}

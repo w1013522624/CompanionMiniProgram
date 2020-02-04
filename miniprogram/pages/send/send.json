@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "x-search": "/components/search/search",
+    "x-login": "/components/login/login",
+    "x-bottom-model": "/components/bottom-model/bottom-model",
+    "x-send-ctrl": "/components/send-ctrl/send-ctrl",
+    "x-send-card": "/components/send-card/send-card"
+  },
+  "enablePullDownRefresh": true
+}

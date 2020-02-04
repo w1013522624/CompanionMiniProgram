@@ -1,0 +1,53 @@
+<view class='changeInfo'>
+  <view class='changeInfoName'>
+    <input placeholder='微信昵称' bindinput='' value='{{nickName}}' disabled="disabled" />
+  </view>
+
+  
+
+  <view class='changeInfoName'>
+    <input placeholder='请输入姓名' bindinput='getName' value='{{name}}' />
+  </view>
+
+  <view class='changeInfoName'>
+    <input placeholder='请输入年级' bindinput='getGrade' value='{{phone}}' />
+  </view>
+
+  <view class='changeInfoName'>
+    <input placeholder='请输入学号' bindinput='getStudentId' value='{{phone}}' />
+  </view>
+
+  <view class='changeInfoName'>
+    <input placeholder='请输入教务系统的密码' type="password" bindinput='getPassword' value='{{phone}}' />
+  </view>
+
+  <view class="changeQuestion">
+    <picker mode="selector" value="{{ans1}}" range="{{list1}}" bindchange="bindSeclectUser1" class="nclick">
+      <view>请问学校图书馆在哪儿?</view>
+      <view class="picker">
+        第一题: {{ans1}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="changeQuestion">
+    <view>请问学校主楼一共有几栋?</view>
+    <picker mode="selector" value="{{ans2}}" range="{{list2}}" bindchange="bindSeclectUser2" class="nclick">
+      <view class="picker">
+        第二题: {{ans2}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="changeQuestion">
+    <view>请问学校的公共自行车叫什么?</view>
+    <picker mode="selector" value="{{ans3}}" range="{{list3}}" bindchange="bindSeclectUser3" class="nclick">
+      <view class="picker">
+        第三题: {{ans3}}
+      </view>
+    </picker>
+  </view>
+
+  <button class='changeBtn' bindtap='regester'>注册</button>
+  <view class="lookout">所有信息请填写准确, 如有错误, 禁止注册!</view>
+</view>

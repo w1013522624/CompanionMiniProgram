@@ -1,0 +1,33 @@
+<view class="blog">
+  <view class="blog-title">
+    <!-- 头像 -->
+    <image class="blog-portrait" src="{{blog.avatarUrl}}"></image>
+    <view class="blog-box">
+      <!-- 名字 -->
+      <view class="blog-nickName">{{blog.nickName}}</view>
+      <!-- 发布时间 -->
+      <view class="blog-time">{{_createTime}}</view>
+    </view>
+  </view>
+  <!-- 发布内容 -->
+  <view class="blog-head">{{blog.head}}</view>
+  <view class="blog-content">{{blog.content}}</view>
+  <!-- 发布的图片 -->
+  <view class="blog-img">
+    <block wx:for="{{blog.img}}" wx:key="index">
+      <!-- 绑定事件 bind 会事件冒泡 catch 不会 -->
+      <image class="img" src="{{item}}" mode="aspectFill" 
+        catchtap="onPreviewImage" 
+        data-imgsrc="{{item}}"
+        data-imgs="{{blog.img}}">
+      </image>
+    </block>
+  </view>
+  <view>{{blog.address}}</view>
+  
+  <!-- 时间 地点 人数 -->
+  <view class="blog-content">{{blog.renShu}}</view>
+  <view class="blog-content">{{blog.shiJian}}</view>
+  <view class="blog-content">{{blog.riQi}}</view>
+  <view class="blog-content">{{blog.diDian}}</view>
+</view>

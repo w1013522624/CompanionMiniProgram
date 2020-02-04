@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "x-search": "/components/search/search",
+  
+    "x-help-card": "/components/help-card/help-card"
+  },
+  "navigationBarTitleText": "help",
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,6 @@
+<x-bottom-model modalShow="{{modalShow}}">
+  <view slot="modal-content">
+    <button class="login" open-type="getUserInfo" 
+    bindgetuserinfo="onGotUserInfo">获取授权信息</button>
+  </view>
+</x-bottom-model>

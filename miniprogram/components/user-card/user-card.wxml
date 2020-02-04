@@ -1,0 +1,11 @@
+<view class="blog">
+  <view class="blog-title">
+    <!-- 头像 -->
+    <image class="blog-portrait" src="{{blog.avatarUrl}}"></image>
+    <!-- <view class="blog-box">
+      <!-- 名字 -->
+    <view class="blog-nickName">{{blog.nickName}}</view>
+    <!-- 发布时间 -->
+    <!-- <view class="blog-time">{{_createTime}}</view> -->
+  </view>
+</view>

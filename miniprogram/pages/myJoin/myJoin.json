@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "x-blog-card": "/components/jieban-card/jieban-card",
+    "x-blog-ctrl": "/components/jieban-ctrl/jieban-ctrl"
+  },
+  "navigationBarTitleText": "我加入的结伴"
+}

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "x-bottom-model": "/components/bottom-model/bottom-model",
+    "x-blog-card": "/components/jieban-card/jieban-card",
+    "x-send-ctrl": "/components/send-ctrl/send-ctrl",
+    "x-send-card": "/components/send-card/send-card",
+    "x-user-card": "/components/user-card/user-card"
+  }
+}

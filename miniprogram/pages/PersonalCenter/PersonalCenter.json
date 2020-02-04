@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "x-search": "/components/search/search",
+    "x-login": "/components/login/login",
+    "x-bottom-model": "/components/bottom-model/bottom-model",
+    "x-blog-card": "/components/jieban-card/jieban-card",
+    "x-blog-ctrl": "/components/jieban-ctrl/jieban-ctrl"
+  },
+  "navigationBarTitleText": "个人中心"
+  
+}

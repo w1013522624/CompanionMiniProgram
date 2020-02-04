@@ -1,0 +1,80 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  background-color: #fff;
+  height: 100rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  box-sizing: border-box;
+}
+.imgSwiper {
+  height: 500rpx;
+}
+.oPlan {
+  display: inline-block;
+  border: 2rpx solid black;
+  /* position: relative;*/
+  margin-top: 50rpx;
+  padding: 0 42rpx;
+  height: 100rpx;
+  width: 400rpx; 
+  background-color: rgb(136, 240, 183);
+  border-radius: 40px;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+.btn-s {
+  /* display: inline-block; */
+  position: absolute;
+  /* border-radius: 10%; */
+  margin-top: 30rpx;
+  
+}
+.imgs {
+  display: inline-block;
+  border: 1rpx solid red;
+}
+.header .icon-fabu {
+  font-size: 48rpx;
+}
+
+.publish-container {
+  width: 68rpx;
+  height: 68rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-container {
+  display: flex;
+  width: 100%;
+}
+.xs {
+  width: 100%;
+}
+
+.btn {
+  background: lightblue;
+}
+
+.btn1 {
+  display: flex;
+  justify-content:center;
+}
+
+.blog-list {
+  margin-top: 120rpx;
+}
+
+.blog-panel {
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+
+

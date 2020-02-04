@@ -1,0 +1,28 @@
+<view class="send">
+  <view class="send-title">
+    <image class="send-portrait" src="{{send.avatarUrl}}"></image>
+    <view class="send-box">
+      <!-- 用户名, 时间 -->
+      <view class="send-nickName">{{send.nickName}}</view>
+      <view class="send-time">{{_createTime}}</view>
+    </view>
+  </view>
+  <!-- ----------结伴信息-------------- -->
+  <view class="send-head">{{send.head}}</view>
+  <!-- <view class="send-content">{{send.content}}</view> -->
+  <!-- 结伴地点, 人数, 时间 -->
+  <view>人数:{{send.renShu}}</view>
+  <view>时间:{{send.shiJian}}</view>
+  <view>日期:{{send.riQi}}</view>
+  <view>地点:{{send.diDian}}</view>
+
+  <!--图片 -->
+  <view class="send-img">
+    <block wx:for="{{send.img}}" wx:key="index">
+      <image class="img" src="{{item}}" mode="aspectFill" catch:tap="onPreviewImage" data-imgsrc="{{item}}" data-imgs="{{send.img}}"></image>
+    </block>
+  </view>
+
+  
+
+</view>

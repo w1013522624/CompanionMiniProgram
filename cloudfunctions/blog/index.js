@@ -1,0 +1,111 @@
+// 云函数入口文件
+const cloud = require('wx-server-sdk')
+
+cloud.init()
+// 引入并加载 tcb-router 模块
+const TcbRouter = require('tcb-router')
+
+// 初始化数据库
+const db = cloud.database()
+
+const blogCollection = db.collection('blog')
+
+const MAX_LIMIT = 100
+
+// 云函数入口函数
+exports.main = async(event, context) => {
+  // 创建一个 TcbRouter
+  const app = new TcbRouter({
+    event
+  })
+
+  // 博客列表
+  app.router('search', async(ctx, next) => {
+    const keyword = event.keyword
+    let w = {}
+    if (keyword.trim() != '') {
+      w = {
+        content: db.RegExp({
+          regexp: keyword,
+          options: 'i',
+        })
+      }
+    }
+    // 以 createTime 字段进行排序, 逆序排序 desc
+    let blogList = await blogCollection.where(w)
+      .skip(event.start)
+      .limit(event.count)
+      .orderBy('createTime', 'desc').get()
+      .then((res) => {
+        return res.data
+      })
+    ctx.body = blogList
+  })
+
+  app.router('list', async (ctx, next) => {
+    // 以 createTime 字段进行排序, 逆序排序 desc
+    let blogList = await blogCollection
+      .skip(event.start)
+      .limit(event.count)
+      .orderBy('createTime', 'desc').get()
+      .then((res) => {
+        return res.data
+      })
+    ctx.body = blogList
+  })
+
+
+  app.router('detail', async(ctx, next) => {
+    let blogId = event.blogId
+    // 详情查询
+    let detail = await blogCollection.where({
+      _id: blogId
+    }).get().then((res) => {
+      return res.data
+    })
+    // 评论查询
+    const countResult = await blogCollection.count()
+    const total = countResult.total
+    let commentList = {
+      data: []
+    }
+    if (total > 0) {
+      // Math.ceil 向上取整
+      const batchTimes = Math.ceil(total / MAX_LIMIT)
+      const tasks = []
+      for (let i = 0; i < batchTimes; i++) {
+        // 数据库名称 blog-comment
+        let promise = db.collection('blog-comment').skip(i * MAX_LIMIT)
+          .limit(MAX_LIMIT).where({
+            blogId
+          }).orderBy('createTime', 'desc').get()
+        tasks.push(promise)
+      }
+      if (tasks.length > 0) {
+        commentList = (await Promise.all(tasks)).reduce((acc, cur) => {
+          return {
+            data: acc.data.concat(cur.data)
+          }
+        })
+      }
+    }
+    ctx.body = {
+      commentList,
+      detail,
+    }
+  })
+
+  // skip 分页查询 limit 每次查询多少条
+  const wxContext = cloud.getWXContext()
+  app.router('getListByOpenid', async(ctx, next) => {
+    ctx.body = await blogCollection.where({
+        _openid: wxContext.OPENID
+      }).skip(event.start).limit(event.count)
+      .orderBy('createTime', 'desc').get()
+      .then((res) => {
+        return res.data
+      })
+  })
+
+  return app.serve()
+}

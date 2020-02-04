@@ -1,0 +1,64 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/jieban/jieban",
+    "pages/Message/Message",
+    "pages/PersonalCenter/PersonalCenter",
+    "pages/jieban-fabu/jieban-fabu",
+    "pages/analysis/analysis",
+    "pages/jieban-comment/jieban-comment",
+    "pages/jieban-history/jieban-history",
+    "pages/send/send",
+    "pages/send-fabu/send-fabu",
+    "pages/send-detail/send-detail",
+    "pages/demo/demo",
+    "pages/demo1/demo1",
+    "pages/swiper/swiper",
+    "pages/demoMap/demoMap",
+    "pages/help/help",
+    "pages/registered/registered",
+    "pages/myJieban/myJieban",
+    "pages/myJoin/myJoin"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "嘉园结伴",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/jieban/jieban",
+        "text": "广场",
+        "iconPath": "images/find.png",
+        "selectedIconPath": "images/find-active.png"
+      },
+      {
+        "pagePath": "pages/analysis/analysis",
+        "text": "分析",
+        "iconPath": "images/analysis.png",
+        "selectedIconPath": "images/analysis-active.png"
+      },
+      {
+        "pagePath": "pages/send/send",
+        "text": "发布",
+        "iconPath": "images/message.png",
+        "selectedIconPath": "images/message-active.png"
+      },
+      {
+        "pagePath": "pages/PersonalCenter/PersonalCenter",
+        "text": "我的",
+        "iconPath": "images/myfile.png",
+        "selectedIconPath": "images/myfile-active.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,42 @@
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="publish-container" bind:tap="onPublish">
+      <i class="iconfont icon-fabu"></i>
+    </view>
+    <view class="search-container">
+      <x-search class="xs" bind:search="onSearch" />
+    </view>
+  </view>
+  
+  <view class="imgs">
+    <image src="cloud://friendship-w7v6t.6672-friendship-w7v6t-1300264992/blog/1577004555462-116214.33136677451.png" class="imgSwiper" ></image>
+  </view>
+  <!-- 400 * 125 -->
+  <view class="oPlan" >
+    <button class="btn-s" bindtap="hell">发布我的结伴计划</button>
+  </view>
+  <!-- --------------------------------------------------- -->
+  <!-- 博客卡片列表 -->
+  <view class="blog-list">
+    <block wx:for="{{blogList}}" wx:key="_id">
+      <view class="blog-panel">
+        <x-blog-card blog="{{item}}" data-blogid="{{item._id}}" bindtap="goComment"/>
+        <x-blog-ctrl 
+          blogId="{{item._id}}"
+          blog="{{item}}"
+          iconfont="iconfont"
+          icon-pinglun="icon-pinglun"
+          icon-fenxiang="icon-fenxiang"
+        />
+      </view>
+    </block>
+  </view>
+  
+  <!-- 底部弹出框 -->
+  <x-login modalShow="{{modalShow}}" 
+    bind:loginSuccess="onLoginSuccess"
+    bind:loginFail="onLoginFail">
+   
+  </x-login>
+</view>

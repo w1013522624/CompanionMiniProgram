@@ -1,0 +1,38 @@
+<!--pages/send/send.wxml-->
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="search-container">
+      <x-search class="xs" bind:search="onSearch" />
+    </view>
+  </view>
+  <!-- +++++++++++++++++++++++++++++++++++++++ -->
+  <button class="btn-fabu" bind:tap="onPublished">
+    <i class="iconfont icon-write"></i>
+  </button>
+  <!-- +++++++++++++++++++++++++++++++++++++++ -->
+
+  <!-- 发布结伴信息 list -->
+  <view class="send-list">
+    <block wx:for="{{sendList}}" wx:key="_id">
+      <view class="send-panel">
+        <x-send-card send="{{item}}" data-blogid="{{item._id}}" bindtap="goComment"/>
+        <x-send-ctrl 
+          blogId="{{item._id}}"
+          blog="{{item}}"
+          iconfont="iconfont"
+          icon-pinglun="icon-pinglun"
+          icon-fenxiang="icon-fenxiang"
+        />
+      </view>
+    </block>
+  </view>
+
+
+
+
+  <!-- 底部弹出框 -->
+  <x-login modalShow="{{modalShow}}" bind:loginSuccess="onLoginSuccess" bind:loginFail="onLoginFail">
+
+  </x-login>
+</view>

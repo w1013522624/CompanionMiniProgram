@@ -1,0 +1,18 @@
+<!--pages/analysis/analysis.wxml-->
+<view class="container">
+  <view>
+    <view>去哪儿的人组多</view>
+    <view>SSSDDSFSDFDFSDFSDFD</view>
+  </view>
+  <view>
+    <view>一般去多少人</view>
+    <view>SSSDDSFSDFDFSDFSDFD</view>
+  </view>
+  <view>
+    <view>什么时间段去呢</view>
+    <view>SSSDDSFSDFDFSDFSDFD</view>
+  </view>
+  <button class="btnClick" bindtap="btnClick">获取结伴信息</button>
+
+
+</view>

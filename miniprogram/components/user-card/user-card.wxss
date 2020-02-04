@@ -1,0 +1,62 @@
+.blog {
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.blog-title {
+  display: flex;
+}
+
+.blog-portrait {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.blog-head {
+  font-size: 50rpx;
+  font-weight: 800;
+}
+
+.blog-box {
+  flex: 1;
+}
+
+.blog-time {
+  font-size: 24rpx;
+  color:#939393;
+}
+
+.blog-content {
+  margin: 20rpx 0;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.blog-img {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  /* border-bottom: 1rpx solid rgba(0, 0, 0, 0.1); */
+}
+
+.blog-img .img {
+  width: 230rpx;
+  height: 230rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.blog-img .img:nth-child(3n) {
+  margin-right: 0;
+}
+
+.blog-nickName {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+
+
+
