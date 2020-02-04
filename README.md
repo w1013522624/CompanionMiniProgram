@@ -25,22 +25,24 @@
 
 页面展示
 --------
-![广场](https://github.com/w1013522624/Vue1/blob/master/static/img/home1.png)
+![广场](https://github.com/w1013522624/MiniProgram1/blob/master/static/home1.png)
+![发布结伴1](https://github.com/w1013522624/MiniProgram1/blob/master/static/fabu1.png)
+![发布结伴2](https://github.com/w1013522624/MiniProgram1/blob/master/static/fabu2.png)
 ![发布结伴]](https://github.com/w1013522624/Vue1/blob/master/static/img/city1.png)
-![个人中心](https://github.com/w1013522624/Vue1/blob/master/static/img/detail1.png)
+![个人中心](https://github.com/w1013522624/MiniProgram1/blob/master/static/personal1.png)
 
 功能演示
 --------
 
 - 广场
 
-![广场](https://github.com/w1013522624/Vue1/blob/master/static/img/home.gif)
+![广场](https://github.com/w1013522624/MiniProgram1/blob/master/static/shouye.gif)
 
 - 发布页面
 
-![发布页面](https://github.com/w1013522624/Vue1/blob/master/static/img/city.gif)
+![发布页面](https://github.com/w1013522624/MiniProgram1/blob/master/static/fabu1.gif)
 
 - 个人中心
 
-![个人中心](https://github.com/w1013522624/Vue1/blob/master/static/img/detail.gif)
+![个人中心](https://github.com/w1013522624/MiniProgram1/blob/master/static/center1.gif)
 
